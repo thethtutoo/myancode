@@ -7,8 +7,52 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header class="row">
+		<div class="col-3">
+			<%= link_to root_path , class: 'logo' do %>
+				<div class="circle">
+					<br>
+	        		Best
+	        		<br>
+	        		Myan
+	        		<br>
+	        		Quoter
+				</div>
+        	<% end %>
+     	 </div>
 
-<%= yield %>
+	      <div class="col-4 slogan">
+	      Myanmar rare quotes are here. Enjoy.
+	      </div>
 
+	      <div class="col-5 links">
+	      	<%= link_to 'Contribute' , new_quote_path %>
+	      	<%= link_to 'About', '#'%>
+	      </div>
+
+	</header>
+	<hr>
+
+	<br class="clear">
+
+<div class="container">
+	<%= yield %>
+</div>
+
+
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<%= link_to "This isn't enough. I need more", root_path, class: 'next-quote' %>
+			</div>
+			<div class="col-6 footer-burb">
+				Proudly hacked in Myanmar by Thet Htut Oo.
+				Want to build your own app . <a href="#">Ask here</a>.
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>

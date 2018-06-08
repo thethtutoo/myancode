@@ -1,0 +1,35 @@
+<h1>Listing Products</h1>
+<%= form_tag(search_products_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Cost</th>
+		<th>Stock</th>
+	</thead>
+	
+	<tbody>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td>
+			 <%= number_to_currency(product.cost, :unit => "Kyats")%>
+			</td>
+			<td><%= product.stock %></td>
+			<td>
+				<%= link_to 'Show', product_path(product) %>
+			</td>
+			<td>
+				<%= link_to 'Edit', edit_product_path(product)%>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<p>
+	<%= link_to "Create a new Product", new_product_path %>
+</p>

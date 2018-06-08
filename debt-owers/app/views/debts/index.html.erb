@@ -1,0 +1,9 @@
+
+</h3>
+<h1>List of Debt Owers</h1>
+<% @debts.each do |debt| %>
+	Name : <%= debt.name %>
+	Amount : <%= debt.amount %>
+	<%= link_to "Show", debt_path(debt.id)%>
+	<br>
+<% end %>

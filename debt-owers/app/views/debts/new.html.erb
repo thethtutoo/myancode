@@ -1,0 +1,19 @@
+<h1>New Debt Owers</h1>
+
+<%= form_for @new_debt do |d| %>
+	<div class="field">
+		<%= d.label :name %>
+		<br>
+		<%= d.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= d.label :amount %>
+		<br>
+		<%= d.text_area :amount %>
+	</div>
+
+	<div class="action">
+		<%= d.submit "Create" %>
+	</div>
+<% end %>

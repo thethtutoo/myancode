@@ -1,0 +1,8 @@
+<h1>Debt Ower</h1>
+Name : <%= @debt.name %>
+<br>
+Amount : <%= @debt.amount %>
+<br>
+<%= link_to("Delete", @debt, {:data => { :confirm=>"Sure?"}, :method=> :delete }) %>
+<%= link_to "Back to Home", debts_path %>
+
